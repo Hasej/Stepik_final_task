@@ -35,6 +35,13 @@ class ProductPage(BasePage):
         title = product_title.text
         assert title == self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_MESSAGE).text, "Product title in message not correct or missed"
 
+    def success_message_not_appear(self):
+        assert self.is_not_element_present(*ProductPageLocators.PRODUCT_ADDED_MESSAGE), "Message appear but should not"
+
+    def success_message_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.PRODUCT_ADDED_MESSAGE), "Message not disappear"
+
+
 
 
 
