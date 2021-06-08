@@ -33,7 +33,7 @@ class ProductPage(BasePage):
     def should_be_product_title_in_meessage(self):
         product_title = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE)
         title = product_title.text
-        assert title in self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_MESSAGE).text, "Product title in message not correct or missed"
+        assert title == self.browser.find_element(*ProductPageLocators.PRODUCT_ADDED_MESSAGE).text, "Product title in message not correct or missed"
 
 
 
